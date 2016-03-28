@@ -15,7 +15,20 @@ gem 'uglifier'
 gem 'bootstrap-sass'
 gem 'font-awesome-sass'
 gem 'simple_form'
-gem 'autoprefixer-rails'
+gem 'cloudinary'
+gem 'carrierwave'
+
+#default rails gems. Here in case we need them.
+# gem 'autoprefixer-rails'
+# gem 'coffee-rails', '~> 4.1.0'
+# gem 'turbolinks'
+# gem 'jbuilder', '~> 2.0'
+# gem 'sdoc', '~> 0.4.0', group: :doc
+#
+# default rails gem in case we need it
+# group :development do
+#   gem 'web-console', '~> 2.0'
+# end
 
 group :development, :test do
   gem 'binding_of_caller'
@@ -24,10 +37,12 @@ group :development, :test do
   gem 'pry-byebug'
   gem 'pry-rails'
   gem 'spring'
-  
-  
 end
+
+# in case we want to add tests
+# gem 'rspec-rails', group: [ :test ]
 
 group :production do
   gem 'rails_12factor'
 end
+
