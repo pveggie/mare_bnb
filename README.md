@@ -16,15 +16,15 @@ SETUP
 
 <h3>FIGARO</h3>
 <ol>
-<li>$ bundle binstubs figaro</li>
+<li>$ bundle binstubs figaro (step may not be required)</li>
 <li>$ figaro install</li>
 <li>$ spring stop</li>
 </ol>
 <p>You should get a message saying that appliation.yaml has been created and that it's been added to the .gitignore list.
-Add cloudinary url to the application.yaml file</p>
+Add cloudinary url to the config/application.yaml file</p>
 
 <h3>SIMPLE_FORM & DEVISE FILES</h3>
 <p>Already created in the template.</p>
 
 <h2>DATABASE</h2>
-<p>Exists. Only necessary to run db:migrate and db:seed.</p>
+<p>Run db:create, db:migrate and db:seed.</p>
