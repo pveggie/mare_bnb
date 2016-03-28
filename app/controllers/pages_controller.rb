@@ -3,5 +3,6 @@ class PagesController < ApplicationController
   end
 
 # one amazing new comment
+# one more amazing new comment
 
 end
