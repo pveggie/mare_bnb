@@ -5,9 +5,9 @@ SETUP
 
 <h2>CREATING REPOSITORY</h2>
 <ol>
-<li>1. In the terminal, navigate to the folder code/YOUR_GITHUB_USERNAME, e.g. "cd code/pveggie"</li>
-<li>2. In main project page on github, mare_bnb, make sure the clone url has SSH next to it (as opposed to HTTPS)</li>
-<li>3. Back in the terminal type git clone and the copy in the clone url. e.g. git clone git@github.com:pveggie/mare_bnb.git</li>
+<li>In the terminal, navigate to the folder code/YOUR_GITHUB_USERNAME, e.g. "cd code/pveggie"</li>
+<li>In main project page on github, mare_bnb, make sure the clone url has SSH next to it (as opposed to HTTPS)</li>
+<li>Back in the terminal type git clone and the copy in the clone url. e.g. git clone git@github.com:pveggie/mare_bnb.git</li>
 </ul>
 
 <h2>ADDITIONAL SETUP FOR GEMS</h2>
@@ -15,11 +15,11 @@ SETUP
 <p>$ bundle install</p>
 
 <h3>FIGARO</h3>
-<ul>
+<ol>
 <li>$ bundle binstubs figaro</li>
 <li>$ figaro install</li>
 <li>$ spring stop</li>
-</ul>
+</ol>
 <p>You should get a message saying that appliation.yaml has been created and that it's been added to the .gitignore list.
 Add cloudinary url to the application.yaml file</p>
 
