@@ -1,5 +1,8 @@
 Rails.application.routes.draw do
+
+
   devise_for :users
+  # from template, don't remove (can be edited depending on page names and action names)
   root to: 'pages#home'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
@@ -15,6 +18,7 @@ Rails.application.routes.draw do
 
   # Example resource route (maps HTTP verbs to controller actions automatically):
   #   resources :products
+  resources :stallions
 
   # Example resource route with options:
   #   resources :products do

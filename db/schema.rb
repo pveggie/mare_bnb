@@ -11,10 +11,52 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160328120451) do
+ActiveRecord::Schema.define(version: 20160328142544) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "availabilities", force: :cascade do |t|
+    t.date     "date"
+    t.integer  "stallion_id"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
+
+  add_index "availabilities", ["stallion_id"], name: "index_availabilities_on_stallion_id", using: :btree
+
+  create_table "bookings", force: :cascade do |t|
+    t.integer  "stallion_id"
+    t.integer  "user_id"
+    t.integer  "mo_rating"
+    t.text     "mo_review"
+    t.integer  "so_rating"
+    t.text     "so_review"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
+
+  add_index "bookings", ["stallion_id"], name: "index_bookings_on_stallion_id", using: :btree
+  add_index "bookings", ["user_id"], name: "index_bookings_on_user_id", using: :btree
+
+  create_table "stallions", force: :cascade do |t|
+    t.string   "name"
+    t.date     "date_of_birth"
+    t.string   "category"
+    t.string   "breed"
+    t.integer  "user_id"
+    t.integer  "average_rating"
+    t.string   "image"
+    t.string   "town"
+    t.string   "country"
+    t.datetime "created_at",     null: false
+    t.datetime "updated_at",     null: false
+    t.string   "lineage"
+    t.text     "description"
+    t.string   "colour"
+  end
+
+  add_index "stallions", ["user_id"], name: "index_stallions_on_user_id", using: :btree
 
   create_table "users", force: :cascade do |t|
     t.string   "email",                  default: "", null: false
@@ -29,9 +71,19 @@ ActiveRecord::Schema.define(version: 20160328120451) do
     t.inet     "last_sign_in_ip"
     t.datetime "created_at",                          null: false
     t.datetime "updated_at",                          null: false
+    t.string   "first_name"
+    t.string   "last_name"
+    t.string   "city"
+    t.string   "postal_code"
+    t.integer  "average_rating"
+    t.boolean  "stallion_owner"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
 
+  add_foreign_key "availabilities", "stallions"
+  add_foreign_key "bookings", "stallions"
+  add_foreign_key "bookings", "users"
+  add_foreign_key "stallions", "users"
 end
