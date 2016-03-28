@@ -10,6 +10,9 @@ SETUP
 <li>Back in the terminal type git clone and the copy in the clone url. e.g. git clone git@github.com:pveggie/mare_bnb.git</li>
 </ul>
 
+<h2>OPEN FOLDER</h2>
+<p>$ cd mare_bnb</p>
+
 <h2>ADDITIONAL SETUP FOR GEMS</h2>
 <p>Start by installing all gems in the bundle</p>
 <p>$ bundle install</p>
