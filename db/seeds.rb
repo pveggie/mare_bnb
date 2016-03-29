@@ -82,7 +82,7 @@ stallions_attributes = [
   {
     name: "Princess Rooney",
     average_rating: "7",
-    category: "Jumping Horses",
+    category: Stallion::CATEGORIES.sample,
     breed: "Pecheron",
     lineage: "confirmed",
     colour: "grey",
