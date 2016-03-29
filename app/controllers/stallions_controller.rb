@@ -55,7 +55,7 @@ class StallionsController < ApplicationController
       :lineage,
       :description,
       :colour,
-      :image,
+      :photo,
       :photo_cache)
   end
 end
