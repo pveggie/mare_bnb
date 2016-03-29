@@ -1,29 +1,22 @@
-<div class="container">
-  <div class="row">
-    <div class="col-xs-12 col-sm-8 col-sm-offset-2">
-      <h2>Sign up</h2>
+<h2>Sign up</h2>
 
-      <!-- adding bootstrap centring to sign-up page. -->
+<!-- adding bootstrap centring to sign-up page. -->
 
-      <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-      <%= f.error_notification %>
+<%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+<%= f.error_notification %>
 
-      <div class="form-inputs">
-        <%= f.input :email, required: true, autofocus: true %>
-        <%= f.input :password, required: true, hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length) %>
-        <%= f.input :password_confirmation, required: true %>
-      </div>
-
-      <div class="form-actions">
-      <!-- I added classes to make the button 100% width and a bootstrap button -->
-      <%= f.button :submit, "Sign up", class: "form-control btn btn-primary" %>
-      </div>
-      <% end %>
-
-
-
-      <%= render "devise/shared/links" %>
-
-    </div>
-  </div>
+<div class="form-inputs">
+  <%= f.input :email, required: true, autofocus: true %>
+  <%= f.input :password, required: true, hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length) %>
+  <%= f.input :password_confirmation, required: true %>
 </div>
+
+<div class="form-actions">
+<!-- I added classes to make the button 100% width and a bootstrap button -->
+<%= f.button :submit, "Sign up", class: "form-control btn btn-primary" %>
+</div>
+<% end %>
+
+
+
+<%= render "devise/shared/links" %>
