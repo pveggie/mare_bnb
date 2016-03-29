@@ -9,6 +9,7 @@ class StallionsController < ApplicationController
 
   def new
     @stallion = Stallion.new
+    @form_variables = {header: "Add"}
   end
 
   def create
@@ -22,11 +23,15 @@ class StallionsController < ApplicationController
 
 
   def edit
-    @stallion = Stallion.find(params[:id])
+    set_stallion
+    @form_variables = {header: "Edit"}
   end
 
 
   def update
+    set_stallion
+    @stallion.update(stallion_params)
+    redirect_to stallion_path(@stallion.id)
   end
 
   def destroy
@@ -34,9 +39,23 @@ class StallionsController < ApplicationController
 
   private
   def set_stallion
+    @stallion = Stallion.find(params[:id])
   end
 
+  # image is from seed, photo is from cloudinary
   def stallion_params
-
+    params.require(:stallion).permit(
+      :image,
+      :name,
+      :date_of_birth,
+      :category,
+      :breed,
+      :town,
+      :country,
+      :lineage,
+      :description,
+      :colour,
+      :image,
+      :photo_cache)
   end
 end
