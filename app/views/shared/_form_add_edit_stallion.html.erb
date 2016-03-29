@@ -9,13 +9,11 @@
       <%= f.input :date_of_birth, as: :date, start_year: Date.today.year - 30,
                               end_year: Date.today.year,
                               order: [:day, :month, :year]%>
-      <%= f.input :town %>
+      <%= f.input :town, placeholder: "Brussels" %>
       <%= f.input :country, as: :string %>
       <!-- We should add a table for categories at some point. -->
-      <%= f.input :category, collection: %w(Rodeo Jumping Racing Working) %>
-      <%= f.input :breed, collection: ["Belgian Warmblood", "Clydesdale", "Shire Horse",
-      "Shetland Pony", "Arabian", "Quarterhorse", "Thoroughbred", "Pecheron", "Apaloosa",
-      "American Paint", "Fjord Horse", "Nokota", "Chilean"]%>
+      <%= f.input :category, collection: Stallion::CATEGORIES %>
+      <%= f.input :breed, collection: Stallion::BREEDS %>
       <%= f.input :colour %>
       <%= f.input :lineage %>
       <%= f.input :description %>
