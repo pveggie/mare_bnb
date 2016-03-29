@@ -4,3 +4,7 @@
 <%= cl_image_tag("#{@stallion.photo}", alt: "#{@stallion.name}",
 width: 300, height: 200, crop: :fill) %>
 <% @stallion.name %>
+
+<%= link_to edit_stallion_path do %>
+  <button class="btn btn-primary" type="button">Edit Stallion</button>
+<% end %>
