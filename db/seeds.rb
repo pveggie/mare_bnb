@@ -5,3 +5,10 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+
+
+Stallion.create(name: "Bob", breed:"Belgian Warmblood" , category:"Working")
+Stallion.create(name: "Stephen", breed:"Clydesdale" , category:"Working")
+Stallion.create(name: "Hans", breed:"Arabian" , category:"Race")
+Stallion.create(name: "Thibaud", breed:"Pecheron" , category:"Jumping")
+Stallion.create(name: "Gemma", breed:"Nokota" , category:"Rodeo")

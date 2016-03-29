@@ -12,7 +12,9 @@
     <%= render 'shared/navbar' %>
     <!-- Notices required by devise come from the shared/flashes file -->
     <%= render 'shared/flashes' %>
+    <div class="container">
     <%= yield %>
+    </div>
     <%= javascript_include_tag 'application' %>
   </body>
 </html>
