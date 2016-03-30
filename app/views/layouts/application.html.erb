@@ -12,9 +12,10 @@
     <%= render 'shared/navbar' %>
     <!-- Notices required by devise come from the shared/flashes file -->
     <%= render 'shared/flashes' %>
-    <div class="container">
+    <!-- We can't have a container here. It prevents us being able to put full-width images
+    in our home and show page-->
     <%= yield %>
-    </div>
+
     <%= javascript_include_tag 'application' %>
   </body>
 </html>
