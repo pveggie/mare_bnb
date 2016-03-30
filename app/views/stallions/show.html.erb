@@ -8,3 +8,5 @@ width: 300, height: 200, crop: :fill) %>
 <%= link_to edit_stallion_path do %>
   <button class="btn btn-primary" type="button">Edit Stallion</button>
 <% end %>
+
+<p><%= link_to "Delete", user_stallion_path(@stallion.id), {class: "btn btn-primary", :method => :delete} %></p>

@@ -58,7 +58,13 @@
     <% end %>
 
     <!-- Button (call-to-action) -->
-    <%= link_to "Add Stallion", new_stallion_path, class: "navbar-wagon-item navbar-wagon-button btn" %>
+    <%= link_to "Become a Owner", if current_user
+                                    user_path(current_user.id)
+                                    else new_user_session_path
+                                 end,
+        class: "navbar-wagon-item navbar-wagon-button btn" %>
+
+
   </div>
 
   <!-- Dropdown list appearing on mobile only -->

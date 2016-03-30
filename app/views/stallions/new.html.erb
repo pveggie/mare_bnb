@@ -1,10 +1,9 @@
-<% current_user.stallion_owner = false %>
-<% if current_user.stallion_owner %>
+<% if @user.stallion_owner %>
 
-  <%= render 'shared/form_add_edit_stallion' %>
+<%= render 'shared/form_add_edit_stallion' %>
 
 <% else %>
 
-  <p>You're not registered as a stallion owner. Please check your profile.</p>
+<p>You're not registered as a stallion owner. Please check your profile.</p>
 
 <% end %>
