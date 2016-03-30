@@ -57,12 +57,13 @@
               </div>
               <div class="col-xs-12 col-sm-6">
                 <div class="form-group">
-                  <input type="date" class="form-control" id="date-booking-start" placeholder="From">
+                  <input type="date" data-provide="datepicker" data-date-format="dd/mm/yyyy"
+                  class="form-control" id="date-booking-start" placeholder="From">
                 </div>
               </div>
               <div class="col-xs-12 col-sm-6">
                 <div class="form-group">
-                  <input type="date" class="form-control" id="date-booking-end" placeholder="Until">
+                  <input type="date" data-provide="datepicker" data-date-format="dd/mm/yyyy" class="form-control" id="date-booking-end" placeholder="Until">
                 </div>
               </div>
             </div>
@@ -98,8 +99,12 @@
               </div>
               <div class="col-xs-12 col-sm-8">
                 <ul class= "list-no-left-padding list-no-bullets">
+                  <!-- need to keep unless clause in until we make date of birth mandatory
+                  in stallion creation -->
+                  <% unless @stallion.date_of_birth.nil? %>
                   <li>Date of Birth: <strong><%= @stallion.date_of_birth.strftime('%d/%m/%Y') %></strong></li>
-                  <li>Category:<strong><%= @stallion.category %></strong></li>
+                  <% end %>
+                  <li>Category: <strong><%= @stallion.category %></strong></li>
                   <li>Breed: <strong><%= @stallion.breed %></strong></li>
                 </ul>
               </div>

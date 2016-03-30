@@ -29,6 +29,10 @@ gem 'carrierwave'
 # group :development do
 #   gem 'web-console', '~> 2.0'
 # end
+#
+source "https://rails-assets.org" do
+  gem 'rails-assets-bootstrap-datepicker'
+end
 
 group :development, :test do
   gem 'binding_of_caller'
