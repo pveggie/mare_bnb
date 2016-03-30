@@ -1,10 +1,96 @@
-<h1>Stallions#show</h1>
-<p>Find me in app/views/stallions/show.html.erb</p>
 
-<%= cl_image_tag("#{@stallion.photo}", alt: "#{@stallion.name}",
-width: 300, height: 200, crop: :fill) %>
-<% @stallion.name %>
+
+<div id="banner-show-stallion" style="background-image: url('<%= image_url @stallion.photo %>');">
+</div>
+
+
+
+<!-- stallion summary and booking form-->
+<div class="wrapper-white">
+  <div class="container">
+    <div class="row">
+
+      <div class="col-xs-12 col-sm-5 col-sm-offset-1">
+        <div class="summary">
+          <div class="summary-owner">
+            <!-- TODO: Change profile pic to variable -->
+            <%= image_tag "profile.jpg", class:"avatar-large" %>
+            <div>
+              <!-- TODO: Replace with variable for owner's name-->
+              Gemma
+            </div>
+          </div>
+
+
+          <div class="summary-stallion">
+            <!--         this is a flex item on the right -->
+            <h4><%= @stallion.name %></h4>
+            <p><%= @stallion.town.capitalize %>, <%= @stallion.country.capitalize %></p>
+            <p>
+              <% if @stallion.average_rating.nil? %>
+              <% 10.times do %>
+              <i class="fa fa-star star-grey"></i>
+              <% end %>
+              <% else %>
+              <% @stallion.average_rating.times do %>
+              <i class="fa fa-star star-gold"></i>
+              <% end %>
+
+              <% (10 - @stallion.average_rating).times do %>
+              <i class="fa fa-star star-grey"></i>
+              <% end %>
+              <% end %>
+            </p>
+          </div>
+        </div>
+      </div>
+
+
+      <div class="col-xs-12 col-sm-4 col-sm-offset-1">
+        <div class="booking-form-box-grey">
+          <form id="flat-booking-form">
+            <div class="row">
+              <div class="form_group">
+                <h4>Book this stallion</h4>
+              </div>
+              <div class="col-xs-12 col-sm-6">
+                <div class="form-group">
+                  <input type="date" class="form-control" id="date-booking-start" placeholder="From">
+                </div>
+              </div>
+              <div class="col-xs-12 col-sm-6">
+                <div class="form-group">
+                  <input type="date" class="form-control" id="date-booking-end" placeholder="Until">
+                </div>
+              </div>
+            </div>
+            <div>
+              <button type="book" class="btn btn-danger form-group form-control">Send Booking Request</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Stallion details-->
+<div class="wrapper-gray">
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-10 col-xs-offset-1 col-sm-7 col-sm-offset-1">
+        <h5>About this listing</h5>
+        <div class="details-section">
+          <p><%= @stallion.description %></p>
+        </div>
+        <div class="details-section">
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
 
 <%= link_to edit_stallion_path do %>
-  <button class="btn btn-primary" type="button">Edit Stallion</button>
+<button class="btn btn-primary" type="button">Edit Stallion</button>
 <% end %>
