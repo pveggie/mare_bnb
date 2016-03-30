@@ -7,39 +7,10 @@
   background: #fff;
   padding: 20px 0;
 }
-.star-gold {
-  color: gold;
-}
 
-.star-gray {
-  color: $gray-dark;
-}
-
-.booking-form-box-gray {
-    background-color: $gray-lighter;
-    border-radius: 3px;
-    margin: 20px 0;
-    padding-bottom: 2px;
-
-}
-
-#stallion-booking-form {
-  margin: 20px;
-
-
-
-  .form-group {
-    margin: 7px 0;
-  }
-
-  h4 {
-      padding-left: 10px;
-      margin-top: 20px;
-    }
-}
-
-.details-section {
-  border-top: 0.1px solid $gray-darker;
+#banner-show-stallion {
+  height: 400px;
+  background-size: cover;
 }
 
 .summary {
@@ -69,7 +40,78 @@
   }
 }
 
-#banner-show-stallion {
-  height: 400px;
-  background-size: cover;
+
+.star-gold {
+  color: gold;
+}
+
+.star-gray {
+  color: $gray-dark;
+}
+
+.booking-form-box-gray {
+  background-color: $gray-lighter;
+  border-radius: 3px;
+  margin: 20px 0;
+  padding-bottom: 2px;
+
+  #stallion-booking-form {
+    margin: 20px;
+
+    .form-group {
+      margin: 7px 0;
+    }
+
+    h4 {
+      padding-left: 10px;
+      margin-top: 20px;
+    }
+  }
+
+}
+
+#stallion-full-details {
+
+  font-size: 14px;
+  font-color: $gray-dark;
+
+  h4, h5 {
+    font-color: $gray-darker;
+    font-weight: bolder;
+  }
+
+
+
+
+}
+.details-section {
+  margin-top: 0px;
+  border-top: 0.1px solid $gray-dark;
+  padding-top: 20px;
+}
+
+.padded-bottom {
+  padding-bottom: 20px;
+}
+
+.link-red {
+  color: $red;
+  text-decoration: none;
+  font-weight: bold;
+
+  &:hover {
+    color: $red;
+  }
+}
+
+.list-no-left-padding {
+  padding-left: 0;
+}
+
+.list-no-bullets {
+  list-style: none;
+}
+
+.details-section-header {
+  color: $gray;
 }
