@@ -115,3 +115,17 @@
 .details-section-header {
   color: $gray;
 }
+
+.li-halfwidth {
+  width: 49%;
+  // margin: auto;
+  // text-align: center;
+}
+
+.service-icon {
+  width: 25px;
+  length: 25px;
+  color: $gray-dark;
+  margin-right: 5px;
+  margin-bottom: 5px;
+}
