@@ -13,7 +13,7 @@
     <% @user.stallions.all.each do |stallion| %>
     <div class="col-xs-12 col-sm-3">
 
-      <!-- %= link_to stallion_path(stallion) do %> -->
+      <%= link_to user_stallion_path(stallion.user, stallion) do %>
       <div class="card" style="background-image: url('<%= image_url stallion.photo %>'), linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2));">
 
         <div class="card-category">Popular</div>
@@ -24,7 +24,7 @@
 <!--         <a href="#" class="card-link"></a> -->
       </div>
 
-       <!-- end %> -->
+       <%end %>
     </div>
     <% end %>
   </div>
