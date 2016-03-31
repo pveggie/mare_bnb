@@ -4,7 +4,7 @@
 <h1>Check out our Sires in detail</h1>
 <p>Feel free to sort our Stallions by category and/or breed</p>
 
-<div class="filter_container">
+<div class="container">
 
 
 <%= simple_form_for :search, url: filter_path, method: :get do |f| %>
@@ -15,7 +15,7 @@
 
 </div>
 
-<div class="filter_results_container">
+<div class="container">
   <div class="row">
     <% @stallions.each do |stallion| %>
     <div class="col-xs-12 col-sm-3">
