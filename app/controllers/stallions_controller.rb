@@ -1,4 +1,3 @@
-#gemma's awesome comment
 class StallionsController < ApplicationController
   def index
     @stallions = Stallion.all
