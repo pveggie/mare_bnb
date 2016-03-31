@@ -18,11 +18,11 @@
       <%= f.input :lineage %>
       <%= f.input :description %>
       <ul class="list-inline list-no-left-padding list-no-bullets">
-        <li><%= f.input :sperm_only, as: :boolean %></li>
-        <li><%= f.input :stabling, as: :boolean %></li>
-        <li><%= f.input :owner_bed, as: :boolean %></li>
-        <li><%= f.input :shooting, as: :boolean %></li>
-        <li><%= f.input :malt_whisky, as: :boolean %></li>
+        <li><%= f.input :sperm_only, as: :boolean, checked_value: true, unchecked_value: false %></li>
+        <li><%= f.input :stabling, as: :boolean, checked_value: true, unchecked_value: false %></li>
+        <li><%= f.input :owner_bed, as: :boolean, checked_value: true, unchecked_value: false %></li>
+        <li><%= f.input :shooting, as: :boolean, checked_value: true, unchecked_value: false %></li>
+        <li><%= f.input :malt_whisky, as: :boolean, checked_value: true, unchecked_value: false %></li>
       </ul>
       <%= f.input :photo %>
       <%= f.input :photo_cache, as: :hidden %>

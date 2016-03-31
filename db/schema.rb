@@ -49,17 +49,17 @@ ActiveRecord::Schema.define(version: 20160330133804) do
     t.string   "image"
     t.string   "town"
     t.string   "country"
-    t.datetime "created_at",                    null: false
-    t.datetime "updated_at",                    null: false
+    t.datetime "created_at",     null: false
+    t.datetime "updated_at",     null: false
     t.string   "lineage"
     t.text     "description"
     t.string   "colour"
     t.string   "photo"
-    t.boolean  "sperm_only",     default: true
-    t.boolean  "stabling",       default: true
-    t.boolean  "owner_bed",      default: true
-    t.boolean  "shooting",       default: true
-    t.boolean  "malt_whisky",    default: true
+    t.boolean  "sperm_only"
+    t.boolean  "stabling"
+    t.boolean  "owner_bed"
+    t.boolean  "shooting"
+    t.boolean  "malt_whisky"
   end
 
   add_index "stallions", ["user_id"], name: "index_stallions_on_user_id", using: :btree
