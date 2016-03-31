@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
 
-  root 'stallions#index'
+  root 'pages#home'
   # get 'users/show'
 
   devise_for :users, :path => 'accounts'
