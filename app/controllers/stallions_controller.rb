@@ -1,7 +1,7 @@
 class StallionsController < ApplicationController
 
   before_action :authenticate_user!, only: [:new, :create, :edit, :update, :destroy]
-  before_action :find_user, only: [:create, :new]
+  before_action :find_user, only: [:create, :new, :edit, :update]
 
   def index
     @stallions = Stallion.all
@@ -35,8 +35,9 @@ class StallionsController < ApplicationController
 
   def update
     set_stallion
+    find_user
     @stallion.update(stallion_params)
-    redirect_to stallion_path(@stallion.id)
+    redirect_to user_stallion_path(@user.id, @stallion.id)
   end
 
   def destroy
@@ -64,12 +65,19 @@ class StallionsController < ApplicationController
       :lineage,
       :description,
       :colour,
+      :sperm_only,
+      :stabling,
+      :malt_whisky,
+      :shooting,
+      :owner_bed,
       :photo,
       :photo_cache)
   end
+
+  def find_user
+   @user = User.find(current_user.id)
+   @user.stallion_owner = true
+ end
 end
 
-    def find_user
-     @user = User.find(current_user.id)
-     @user.stallion_owner = true
-    end
+
