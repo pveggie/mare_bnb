@@ -281,7 +281,6 @@ stallions_attributes = [
     description: "This stately horse has a proud and steady bearing.",
     country: "United Arab Emirates",
     town: "Abu Dhabi",
-    photo: open("http://res.cloudinary.com/domva0jha/image/upload/v1459432246/ba4tl2usrcjefphcwxwm.jpg"),
     user_id: (User.find_by email: "test@test.com").id,
     sperm_only: false,
     stabling: true,
