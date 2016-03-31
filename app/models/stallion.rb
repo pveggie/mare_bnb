@@ -10,4 +10,6 @@ class Stallion < ActiveRecord::Base
   BREEDS = ["Belgian Warmblood", "Clydesdale", "Shire Horse",
       "Shetland Pony", "Arabian", "Quarterhorse", "Thoroughbred", "Pecheron", "Apaloosa",
       "American Paint", "Fjord Horse", "Nokota", "Chilean"]
+  SERVICES = ["sperm_only", "stabling", "owner_bed", "shooting", "malt_whisky"]
 end
+
