@@ -3,6 +3,8 @@ Rails.application.routes.draw do
   root 'pages#home'
   # get 'users/show'
 
+  get '/filter', to: 'pages#filter'
+
   devise_for :users, :path => 'accounts'
 
   resources :users, only: [:show] do
