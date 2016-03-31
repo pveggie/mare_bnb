@@ -1,19 +1,19 @@
-
-<!--This needs to be changed to CSS and classes at some point -->
-<center><h1>MareBNB<h1>
-<p>Your Horse Will Thank You<p></center>
-<br>
-<br>
-<br>
-<br>
+<h1>Hello <%= @user.first_name %></h1>
+<p><%= @user.email %></p>
 
 
+
+
+
+ <!-- Button (call-to-action) -->
+<%= link_to "Add Stallion", new_user_stallion_path(@user.id), class: "navbar-wagon-item navbar-wagon-button btn" %>
 
 <div class="container">
-  <div class="row">
-    <% Stallion.all.each do |stallion| %>
+  <div class="row add-margin-top">
+    <% @user.stallions.all.each do |stallion| %>
     <div class="col-xs-12 col-sm-3">
-  <%=  link_to user_stallion_path(stallion.user, stallion) do %>
+
+      <%= link_to user_stallion_path(stallion.user, stallion) do %>
       <div class="card" style="background-image: url('<%= image_url stallion.photo %>'), linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2));">
 
         <div class="card-category">Popular</div>
@@ -24,10 +24,8 @@
 <!--         <a href="#" class="card-link"></a> -->
       </div>
 
-      <% end %>
+       <%end %>
     </div>
     <% end %>
   </div>
 </div>
-
-

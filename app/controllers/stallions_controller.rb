@@ -1,4 +1,8 @@
 class StallionsController < ApplicationController
+
+  before_action :authenticate_user!, only: [:new, :create, :edit, :update, :destroy]
+  before_action :find_user, only: [:create, :new]
+
   def index
     @stallions = Stallion.all
   end
@@ -7,20 +11,21 @@ class StallionsController < ApplicationController
     @stallion = Stallion.find(params[:id])
   end
 
+
   def new
     @stallion = Stallion.new
     @form_variables = {header: "Add"}
   end
 
+
   def create
-    @stallion = Stallion.new(stallion_params)
+    @stallion = @user.stallions.build(stallion_params)
     if @stallion.save
-      redirect_to stallion_path(@stallion.id)
+      redirect_to user_path(@user.id)
     else
       render :new
     end
   end
-
 
   def edit
     set_stallion
@@ -35,9 +40,13 @@ class StallionsController < ApplicationController
   end
 
   def destroy
+    @stallion = Stallion.find(params[:id])
+    @stallion.destroy()
+    redirect_to user_path
   end
 
   private
+
   def set_stallion
     @stallion = Stallion.find(params[:id])
   end
@@ -59,3 +68,8 @@ class StallionsController < ApplicationController
       :photo_cache)
   end
 end
+
+    def find_user
+     @user = User.find(current_user.id)
+     @user.stallion_owner = true
+    end

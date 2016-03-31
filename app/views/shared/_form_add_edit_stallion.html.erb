@@ -4,7 +4,7 @@
 
     <h1><%= @form_variables[:header] %> Stallion</h1>
 
-      <%= simple_form_for(@stallion) do |f| %>
+      <%= simple_form_for [@user, @stallion] do |f| %>
       <%= f.input :name %>
       <%= f.input :date_of_birth, as: :date, start_year: Date.today.year - 30,
                               end_year: Date.today.year,
