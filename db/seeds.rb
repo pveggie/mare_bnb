@@ -315,9 +315,4 @@ profile_attributes = [
   }
 ]
 
-profile_attributes.each do |params|
-
-  profile = Profile.find(params[:user_id])
-  profile.update!(params)
-
-end
+profile_attributes.each { |params| Profile.create!(params) }
