@@ -15,6 +15,7 @@
     <!-- We can't have a container here. It prevents us being able to put full-width images
     in our home and show page-->
     <%= yield %>
+    <%= render "shared/footer" %>
 
     <%= javascript_include_tag 'application' %>
   </body>
