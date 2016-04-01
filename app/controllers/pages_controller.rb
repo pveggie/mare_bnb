@@ -14,10 +14,8 @@ class PagesController < ApplicationController
 
   def filter
     # p params[:search]
-    @category = params[:search][:category]
-    # if params[:search]
-    @breed = params[:search][:breed]
-    # if params[:search]
+    @category = params[:search][:category] if params[:search]
+    @breed = params[:search][:breed] if params[:search]
     @stallions = Stallion.all
 
     if @category != "" && @breed  != ""
