@@ -16,10 +16,9 @@
         <div class="summary">
           <div class="summary-owner">
             <!-- TODO: Change profile pic to variable -->
-            <%= image_tag "profile.jpg", class:"avatar-large" %>
+            <%= image_tag "#{@stallion.user.profile.photo}", class:"avatar-large" %>
             <div>
-              <!-- TODO: Replace with variable for owner's name-->
-              Gemma
+              <%= @stallion.user.profile.title %> <%= @stallion.user.profile.last_name %>
             </div>
           </div>
 

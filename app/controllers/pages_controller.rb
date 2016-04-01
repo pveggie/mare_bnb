@@ -20,7 +20,6 @@ class PagesController < ApplicationController
 
     if @category != "" && @breed  != ""
       @stallions = Stallion.where(category: @category, breed: @breed)
-      # @stallions = [Stallion.first, Stallion.find(2) ]
     elsif @category != ""
       @stallions = Stallion.where(category: @category)
     elsif @breed != ""
