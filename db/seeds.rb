@@ -11,50 +11,24 @@ Profile.destroy_all
 User.destroy_all
 user_attributes = [
   {
-    email: "test@test.com",
+    email: "pierre@test.com",
     password: "testtest",
-    first_name: "Sir Gerald" },
+    first_name: "Pierre" },
 
   {
-    email: "blah2@blah.com",
-    password: "12345678",
-    first_name: "Colin" },
+    email: "antoine@test.com",
+    password: "testtest",
+    first_name: "Antoine" },
 
   {
-    email: "blah3@blah.com",
-    password: "12345678",
-    first_name: "Gogi" },
+    email: "alvaro@test.com",
+    password: "testtest",
+    first_name: "Alvaro" },
 
   {
-    email: "blah4@blah.com",
-    password: "12345678",
-    first_name: "Foz" },
-
-  {
-    email: "blah5@blah.com",
-    password: "12345678",
-    first_name: "Zarrah" },
-
-  {
-    email: "blah6@blah.com",
-    password: "12345678",
-    first_name: "Luis" },
-
-  {
-    email: "blah7@blah.com",
-    password: "12345678",
-    first_name: "Eren" },
-
-  {
-    email: "blah8@blah.com",
-    password: "12345678",
-    first_name: "Danni" },
-
-  {
-    email: "blah9@blah.com",
-    password: "12345678",
-    first_name: "J9" }
-
+    email: "tomasz@test.com",
+    password: "testtest",
+    first_name: "Tomasz" }
 ]
 
 user_attributes.each { |params| User.create!(params) }
@@ -75,7 +49,7 @@ stallions_attributes = [
     country: "Belgium",
     town: "Kortrijk",
     photo: open("http://res.cloudinary.com/domva0jha/image/upload/v1459435095/ratlcmq36eqgawdbk8tf.png"),
-    user_id: (User.find_by email: "test@test.com").id,
+    user_id: (User.all).sample.id,
     sperm_only: true,
     stabling: true,
     owner_bed: true,
@@ -94,7 +68,7 @@ stallions_attributes = [
     country: "Belgium",
     town: "Ghent",
     photo: open("http://res.cloudinary.com/domva0jha/image/upload/v1459435008/fq5rfrrqxohflrubll0z.jpg"),
-    user_id: (User.find_by email: "test@test.com").id,
+    user_id: (User.all).sample.id,
     sperm_only: true,
     stabling: true,
     owner_bed: true,
@@ -113,7 +87,7 @@ stallions_attributes = [
     country: "Belgium",
     town: "Waterloo",
     photo: open("http://res.cloudinary.com/domva0jha/image/upload/v1459434875/tciamqqudtplajfjsm5c.jpg"),
-    user_id: (User.find_by email: "test@test.com").id,
+    user_id: (User.all).sample.id,
     sperm_only: true,
     stabling: false,
     owner_bed: true,
@@ -132,7 +106,7 @@ stallions_attributes = [
     country: "France",
     town: "Marseille",
     photo: open("http://res.cloudinary.com/domva0jha/image/upload/v1459434789/ppfln1ur6qyvceoiemwf.jpg"),
-    user_id: (User.find_by email: "test@test.com").id,
+    user_id: (User.all).sample.id,
     sperm_only: false,
     stabling: true,
     owner_bed: true,
@@ -151,7 +125,7 @@ stallions_attributes = [
     country: "The Netherlands",
     town: "The Hague",
     photo: open("http://res.cloudinary.com/domva0jha/image/upload/v1459434706/x5rfihiju4rdy888luwk.jpg"),
-    user_id: (User.find_by email: "test@test.com").id,
+    user_id: (User.all).sample.id,
     sperm_only: true,
     stabling: true,
     owner_bed: false,
@@ -170,7 +144,7 @@ stallions_attributes = [
     country: "United Arab Emirates",
     town: "Dubai",
     photo: open("http://res.cloudinary.com/domva0jha/image/upload/v1459434636/vakqb09g8srmr7w5ffoy.jpg"),
-    user_id: (User.find_by email: "test@test.com").id,
+    user_id: (User.all).sample.id,
     sperm_only: true,
     stabling: true,
     owner_bed: true,
@@ -189,7 +163,7 @@ stallions_attributes = [
     country: "Germany",
     town: "Frankfurt",
     photo: open("http://res.cloudinary.com/domva0jha/image/upload/v1459434547/kh845rhbr5ugq0w5063k.jpg"),
-    user_id: (User.find_by email: "test@test.com").id,
+    user_id: (User.all).sample.id,
     sperm_only: false,
     stabling: true,
     owner_bed: true,
@@ -208,7 +182,7 @@ stallions_attributes = [
     country: "Belgium",
     town: "Luxembourg",
     photo: open("http://res.cloudinary.com/domva0jha/image/upload/v1459434448/hjavjtwrordrtiuzulsj.jpg"),
-    user_id: (User.find_by email: "test@test.com").id,
+    user_id: (User.all).sample.id,
     sperm_only: true,
     stabling: true,
     owner_bed: true,
@@ -227,7 +201,7 @@ stallions_attributes = [
     country: "France",
     town: "Paris",
     photo: open("http://res.cloudinary.com/domva0jha/image/upload/v1459434125/ui52ytfzvoeqrmygtae9.jpg"),
-    user_id: (User.find_by email: "test@test.com").id,
+    user_id: (User.all).sample.id,
     sperm_only: true,
     stabling: true,
     owner_bed: true,
@@ -246,7 +220,7 @@ stallions_attributes = [
     country: "Spain",
     town: "Cordoba",
     photo: open("http://res.cloudinary.com/domva0jha/image/upload/v1459434029/yn0rfnexfbf5ttasikfn.jpg"),
-    user_id: (User.find_by email: "test@test.com").id,
+    user_id: (User.all).sample.id,
     sperm_only: false,
     stabling: false,
     owner_bed: false,
@@ -265,7 +239,7 @@ stallions_attributes = [
     country: "Spain",
     town: "Bilbao",
     photo: open("http://res.cloudinary.com/domva0jha/image/upload/v1459433811/pwll7hr36cmxjyw2ex9l.jpg"),
-    user_id: (User.find_by email: "test@test.com").id,
+    user_id: (User.all).sample.id,
     sperm_only: true,
     stabling: true,
     owner_bed: true,
@@ -284,7 +258,7 @@ stallions_attributes = [
     country: "United Arab Emirates",
     town: "Abu Dhabi",
     photo: open("http://res.cloudinary.com/domva0jha/image/upload/v1459443261/sd69lfi8wx2ukaspxpq2.jpg"),
-    user_id: (User.find_by email: "test@test.com").id,
+    user_id: (User.all).sample.id,
     sperm_only: false,
     stabling: true,
     owner_bed: true,
@@ -293,3 +267,57 @@ stallions_attributes = [
   }
 ]
 stallions_attributes.each { |params| Stallion.create!(params) }
+
+profile_attributes = [
+  {
+    user_id: (User.find_by email: "pierre@test.com").id,
+    last_name: "Moneybags",
+    title: (Profile::TITLES).sample,
+    net_worth: 135,
+    estate: "Chateau Riche",
+    town: "Ghent",
+    country: "Belgium",
+    photo: open("http://res.cloudinary.com/domva0jha/image/upload/v1459517589/pierre_y0f3qw.jpg"),
+    profile_made: true
+    },
+  {
+    user_id: (User.find_by email: "antoine@test.com").id,
+    last_name: "Steuerkauf",
+    title: (Profile::TITLES).sample,
+    net_worth: 12,
+    estate: "Goldleafington",
+    town: "Aschaffenburg",
+    country: "Germany",
+    photo: open("http://res.cloudinary.com/domva0jha/image/upload/v1459517584/antoine_igbrlq.jpg"),
+    profile_made: true
+    },
+  {
+    user_id: (User.find_by email: "alvaro@test.com").id,
+    last_name: "Ganded Lentry",
+    title: (Profile::TITLES).sample,
+    net_worth: 23,
+    estate: "Land of Horses",
+    town: "Bavaria",
+    country: "Germany",
+    photo: open("http://res.cloudinary.com/domva0jha/image/upload/v1459517582/alvaro_j4unrg.png"),
+    profile_made: true
+    },
+  {
+    user_id: (User.find_by email: "tomasz@test.com").id,
+    last_name: "Uberriche",
+    title: (Profile::TITLES).sample,
+    net_worth: 12,
+    estate: "Uber Estate",
+    town: "Cambridge",
+    country: "England",
+    photo: open("http://res.cloudinary.com/domva0jha/image/upload/v1459517594/tomasz_arwymf.jpg"),
+    profile_made: true
+  }
+]
+
+profile_attributes.each do |params|
+
+  profile = Profile.find(params[:user_id])
+  profile.update!(params)
+
+end
