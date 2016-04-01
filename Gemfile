@@ -17,6 +17,7 @@ gem 'font-awesome-sass'
 gem 'simple_form'
 gem 'cloudinary'
 gem 'carrierwave'
+gem 'simple-form-datepicker'
 
 #default rails gems. Here in case we need them.
 # gem 'autoprefixer-rails'

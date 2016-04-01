@@ -1,0 +1,14 @@
+<h1>Bookings#new</h1>
+<p>Find me in app/views/bookings/new.html.erb</p>
+
+<% if @user.id != @stallion.user_id %>
+
+<%= render 'shared/form_add_booking.html.erb' %>
+
+<% else %>
+
+<p>You can not book your own Stallion</p>
+
+<%= link_to "Back to my Dashboard", user_path(@user.id), class: "navbar-wagon-item navbar-wagon-button btn" %>
+
+<% end %>
