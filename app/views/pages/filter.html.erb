@@ -7,39 +7,40 @@
 
 
       </div>
-      <%= simple_form_for :search, url: filter_path, method: :get do |f| %>
-      <%= f.input :category, collection: Stallion::CATEGORIES, placeholder: 'Pick a horse category', label: 'Pick a category to filter' %>
-      <%= f.input :breed, collection: Stallion::BREEDS, label: 'And/or try filtering on a particular breed', as: :radio_buttons   %>
-      <%= f.button :submit, "Filter those Sires, bitch!", class: "btn btn-lg btn-info" %>
-
-      <% end %>
-    </div>
-  </div>
-</div>
-
-
-<div class="wrapper-gray">
-  <div class="container">
-    <div class="row">
+      <div class="row">
+        <div class="col-xs-6 col-sm-6">
+          <%= simple_form_for :search, url: filter_path, method: :get do |f| %>
+          <%= f.input :category, label: 'Pick a category to filter', collection: Stallion.categories  %>
+          <%= f.input :breed, collection: Stallion.breeds, label: 'And/or try filtering on a particular breed', as: :radio_buttons   %>
+          <%= f.input :country, collection: Stallion.countries, label: 'And/or try filtering on a particular country location'   %>
+          <%= f.input :average_rating,  collection: Stallion.ratings, label: 'And/or try filtering on the particular average rating' %>
+          <%= f.button :submit, "Filter those Sires, bitch!", class: "btn btn-lg btn-info" %>
+          <% end %>
+        </div>
+      </div>
       <% @stallions.each do |stallion| %>
-      <div class="col-xs-12 col-sm-3">
-        <%=  link_to user_stallion_path(stallion.user, stallion) do %>
-        <div class="card" style="background-image: url('<%= image_url stallion.photo %>'), linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2));">
-
+      <!-- <div class="row"> -->
+        <div class="col-xs-6 col-sm-6">
+          <%=  link_to user_stallion_path(stallion.user, stallion) do %>
+          <div class="card" style="background-image: url('<%= image_url stallion.photo %>'), linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2));">
+          </div>
           <div class="card-category">Popular</div>
           <div class="card-description">
             <h2><%= stallion.name %></h2>
             <p><%= stallion.category %>  -  <%= stallion.breed %></p>
           </div>
-          <!--         <a href="#" class="card-link"></a> -->
+          <% end %>
         </div>
-
-        <% end %>
-      </div>
+      <!-- </div> -->
       <% end %>
+      <!--         <a href="#" class="card-link"></a> -->
     </div>
+
   </div>
 </div>
+</div>
+
+
 
 
 <div class="wrapper-white">
