@@ -1,2 +1,4 @@
-<h1>Profiles#edit</h1>
-<p>Find me in app/views/profiles/edit.html.erb</p>
+<% if @profile.profile_made == false %>
+<%= "Looks like you haven't made a profile yet. Let's do that now!" %>
+<% end %>
+<%= render 'shared/form_edit_profile' %>
