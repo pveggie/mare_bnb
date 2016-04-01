@@ -1,37 +1,53 @@
 
 
+<div class="wrapper-white">
+  <div class="container">
+    <div class="filter-details-section">
+      <div class="details-section-header">
 
-<h1>Check out our Sires in detail</h1>
-<p>Feel free to sort our Stallions by category and/or breed</p>
 
-<div class="container">
-
-
-<%= simple_form_for :search, url: filter_path, method: :get do |f| %>
-  <%= f.input :category, collection: Stallion::CATEGORIES %>
-  <%= f.input :breed, collection: Stallion::BREEDS %>
-  <%= f.button :submit %>
-<% end %>
-
-</div>
-
-<div class="container">
-  <div class="row">
-    <% @stallions.each do |stallion| %>
-    <div class="col-xs-12 col-sm-3">
-      <%=  link_to user_stallion_path(stallion.user, stallion) do %>
-      <div class="card" style="background-image: url('<%= image_url stallion.photo %>'), linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2));">
-
-        <div class="card-category">stallion.town</div>
-        <div class="card-description">
-          <h2><%= stallion.name %></h2>
-          <p><%= stallion.category %>  -  <%= stallion.breed %></p>
-        </div>
-        <!--         <a href="#" class="card-link"></a> -->
       </div>
+      <%= simple_form_for :search, url: filter_path, method: :get do |f| %>
+      <%= f.input :category, collection: Stallion::CATEGORIES, placeholder: 'Pick a horse category', label: 'Pick a category to filter' %>
+      <%= f.input :breed, collection: Stallion::BREEDS, label: 'And/or try filtering on a particular breed', as: :radio_buttons   %>
+      <%= f.button :submit, "Filter those Sires, bitch!", class: "btn btn-lg btn-info" %>
 
       <% end %>
     </div>
-    <% end %>
+  </div>
+</div>
+
+
+<div class="wrapper-gray">
+  <div class="container">
+    <div class="row">
+      <% @stallions.each do |stallion| %>
+      <div class="col-xs-12 col-sm-3">
+        <%=  link_to user_stallion_path(stallion.user, stallion) do %>
+        <div class="card" style="background-image: url('<%= image_url stallion.photo %>'), linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2));">
+
+          <div class="card-category">Popular</div>
+          <div class="card-description">
+            <h2><%= stallion.name %></h2>
+            <p><%= stallion.category %>  -  <%= stallion.breed %></p>
+          </div>
+          <!--         <a href="#" class="card-link"></a> -->
+        </div>
+
+        <% end %>
+      </div>
+      <% end %>
+    </div>
+  </div>
+</div>
+
+
+<div class="wrapper-white">
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-10 col-xs-offset-1 col-sm-7 col-sm-offset-1">
+
+      </div>
+    </div>
   </div>
 </div>

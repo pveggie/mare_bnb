@@ -2,23 +2,18 @@
 <%= @user.first_name %>'s Profile
 <% end %>
 
-<!-- stallion summary and booking form-->
 <div class="wrapper-white">
   <div class="container">
     <div class="row">
 
       <div class="col-xs-12 col-sm-8 col-sm-offset-1">
-        <%= image_tag "profile.jpg", class:"avatar-large" %>
+        <%= image_tag "#{@profile.photo}", class:"avatar-large" %>
         <%= @profile.title %> <%= @profile.user.first_name %> <% @profile.last_name %>
-
-
-
       </div>
     </div>
   </div>
 </div>
 
-<!-- Stallion details-->
 <div class="wrapper-gray">
   <div class="container">
     <div class="row">
