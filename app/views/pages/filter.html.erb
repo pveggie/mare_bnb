@@ -3,10 +3,6 @@
 <div class="wrapper-white">
   <div class="container">
     <div class="filter-details-section">
-      <div class="details-section-header">
-
-
-      </div>
       <div class="row">
         <div class="col-xs-6 col-sm-6">
           <%= simple_form_for :search, url: filter_path, method: :get do |f| %>
@@ -17,22 +13,20 @@
           <%= f.button :submit, "Filter those Sires, bitch!", class: "btn btn-lg btn-info" %>
           <% end %>
         </div>
-      </div>
-      <% @stallions.each do |stallion| %>
-      <!-- <div class="row"> -->
         <div class="col-xs-6 col-sm-6">
-          <%=  link_to user_stallion_path(stallion.user, stallion) do %>
-          <div class="card" style="background-image: url('<%= image_url stallion.photo %>'), linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2));">
-          </div>
-          <div class="card-category">Popular</div>
-          <div class="card-description">
-            <h2><%= stallion.name %></h2>
-            <p><%= stallion.category %>  -  <%= stallion.breed %></p>
-          </div>
+          <% @stallions.each do |stallion| %>
+            <%=  link_to user_stallion_path(stallion.user, stallion) do %>
+              <div class="card" style="background-image: url('<%= image_url stallion.photo %>'), linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2));">
+                <div class="card-category">Popular</div>
+                <div class="card-description">
+                  <h2><%= stallion.name %></h2>
+                  <p><%= stallion.category %>  -  <%= stallion.breed %></p>
+                </div>
+              </div>
+            <% end %>
           <% end %>
         </div>
-      <!-- </div> -->
-      <% end %>
+      </div>
       <!--         <a href="#" class="card-link"></a> -->
     </div>
 
