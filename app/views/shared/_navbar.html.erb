@@ -60,12 +60,6 @@
 
     <!-- Different buttons depending on login status and stallion_owner status -->
     <!-- My Bookings only appears if user is logged in -->
-    <% if user_signed_in? %>
-
-      <%= link_to "My Bookings", "#",
-        class: "navbar-wagon-item navbar-wagon-button btn" %>
-
-    <% end %>
 
     <!-- Button for registering as SO changes to my stable if user is a horse owner -->
     <% button_text = current_user && !current_user.stallions.empty? ? "My Stable" : "Pimp Your Horse" %>
