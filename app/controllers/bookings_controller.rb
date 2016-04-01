@@ -6,13 +6,15 @@ before_action :find_stallion, only: [:create, :new]
   def new
     @booking = Booking.new
     @form_variables = {header: "Add"}
+    @unavailabilities = @stallion.bookings.pluck(:date)
+
   end
 
   def create
     @booking = @stallion.bookings.build(bookings_params)
     @booking.user_id = @user.id
     @booking.stallion_owner_id = @stallion.user_id
-    if @booking.save && @booking.stallion_owner_id != @booking.user_id
+    if @booking.save!
       redirect_to user_path(@user.id)
     else
       render :new
