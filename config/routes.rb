@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+
   root 'pages#home'
   # get 'users/show'
 
@@ -8,7 +9,9 @@ Rails.application.routes.draw do
   devise_for :users, :path => 'accounts'
 
   resources :users, only: [:show] do
-    resources :stallions
+    resources :stallions do
+      resources :bookings, only: [:new, :create]
+    end
   end
 
 

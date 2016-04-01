@@ -29,3 +29,29 @@
     <% end %>
   </div>
 </div>
+
+
+<h1> My Bookings </h1>
+
+
+<div class="container">
+  <div class="row add-margin-top">
+    <% @user.bookings.all.each do |booking| %>
+    <div class="col-xs-12 col-sm-3">
+      <h3><%= booking.date %></h3>
+      <%= link_to user_stallion_path(booking.stallion_owner_id, booking.stallion_id) do %>
+      <div class="card" style="background-image: url('<%= image_url Stallion.find(booking.stallion_id).photo %>'), linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2));">
+
+        <div class="card-category">Popular</div>
+        <div class="card-description">
+          <h2><%= Stallion.find(booking.stallion_id).name %></h2>
+          <p><%= Stallion.find(booking.stallion_id).category %>  -  <%= Stallion.find(booking.stallion_id).breed %></p>
+        </div>
+<!--         <a href="#" class="card-link"></a> -->
+      </div>
+
+       <%end %>
+    </div>
+    <% end %>
+  </div>
+</div>
