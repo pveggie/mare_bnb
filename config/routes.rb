@@ -12,11 +12,9 @@ Rails.application.routes.draw do
     resources :stallions do
       resources :bookings, only: [:new, :create]
     end
+
+    resources :profiles, only: [:new, :create, :edit, :update, :show]
   end
-
-
-
-
 
   # Example resource route with options:
   #   resources :products do
