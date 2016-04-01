@@ -14,15 +14,12 @@ class PagesController < ApplicationController
 
   def filter
     # p params[:search]
-    @category = params[:search][:category]
-    # if params[:search]
-    @breed = params[:search][:breed]
-    # if params[:search]
+    @category = params[:search][:category] if params[:search]
+    @breed = params[:search][:breed] if params[:search]
     @stallions = Stallion.all
 
     if @category != "" && @breed  != ""
       @stallions = Stallion.where(category: @category, breed: @breed)
-      # @stallions = [Stallion.first, Stallion.find(2) ]
     elsif @category != ""
       @stallions = Stallion.where(category: @category)
     elsif @breed != ""
