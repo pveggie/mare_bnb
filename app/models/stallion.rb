@@ -7,10 +7,10 @@ class Stallion < ActiveRecord::Base
 
   mount_uploader :photo, PhotoUploader
 
-  # CATEGORIES = ["Rodeo", "Jumping", "Racing", "Working"]
-  # BREEDS = ["Belgian Warmblood", "Clydesdale", "Shire Horse",
-  #     "Shetland Pony", "Arabian", "Quarterhorse", "Thoroughbred", "Pecheron", "Apaloosa",
-  #     "American Paint", "Fjord Horse", "Nokota", "Chilean"]
+  CATEGORIES = ["Rodeo", "Jumping", "Racing", "Working"]
+  BREEDS = ["Belgian Warmblood", "Clydesdale", "Shire Horse",
+      "Shetland Pony", "Arabian", "Quarterhorse", "Thoroughbred", "Pecheron", "Apaloosa",
+      "American Paint", "Fjord Horse", "Nokota", "Chilean"]
   # COLOUR = ["black", "brown", "white", "grey", "white"]
   # COUNTRY = ["Belgium","France","The Netherlands", "United Arab Emirates", ]
   SERVICES = ["sperm_only", "stabling", "owner_bed", "shooting", "malt_whisky"]
