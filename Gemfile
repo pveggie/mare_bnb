@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
 ruby '2.3.0'
 
-gem 'rails', '4.2.6'
+gem 'rails', '4.2.10'
 gem 'puma'
 gem 'pg', '~> 0.18.0'
 gem 'figaro'
