@@ -1,5 +1,5 @@
 source 'https://rubygems.org'
-ruby '2.3.0'
+ruby '2.3.3'
 
 gem 'rails', '4.2.10'
 gem 'puma'
@@ -18,6 +18,9 @@ gem 'simple_form'
 gem 'cloudinary'
 gem 'carrierwave'
 gem 'simple-form-datepicker'
+
+gem "loofah", ">= 2.2.3"
+gem "sprockets", ">= 3.7.2"
 
 #default rails gems. Here in case we need them.
 # gem 'autoprefixer-rails'
